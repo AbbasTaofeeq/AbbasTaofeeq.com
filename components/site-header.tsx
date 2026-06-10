@@ -53,8 +53,12 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07080c]/78 px-5 py-4 backdrop-blur-xl sm:px-8 lg:px-10">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-3" aria-label="Home">
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-teal-300/30 bg-teal-300/10 font-display font-semibold text-teal-100">
-            AT
+          <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-teal-300/30 bg-teal-300/10">
+            <img
+              src="https://res.cloudinary.com/daqmbfctv/image/upload/c_crop,g_north_west,h_1115,w_1024/ChatGPT_Image_Mar_23_2026_02_41_23_PM_cuwmuf.png"
+              alt="Logo"
+              className="h-full w-full object-cover"
+            />
           </span>
           <span className="hidden leading-tight sm:block">
             <span className="block font-display font-semibold">

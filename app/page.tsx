@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
+import { ContactSectionPopup } from "@/components/contact-section-popup";
 import { ProjectCard } from "@/components/project-card";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#07080c] text-white">
       <SiteHeader navItems={navItems} />
+      <ContactSectionPopup />
 
       <section
         id="home"
