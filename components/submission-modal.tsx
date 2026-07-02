@@ -29,7 +29,7 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         stiffness: 200,
         damping: 20,
         duration: 0.6
@@ -49,7 +49,7 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring" as const,
+        type: "spring",
         stiffness: 200,
         damping: 15,
         delay: 0.2

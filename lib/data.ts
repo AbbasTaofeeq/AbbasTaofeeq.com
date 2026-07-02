@@ -3,6 +3,8 @@ import {
   Code2,
   Gauge,
   Mail,
+  MapPin,
+  Phone,
   Settings2,
   Users2
 } from "lucide-react";
@@ -55,9 +57,9 @@ export const navItems: NavItem[] = [
 ];
 
 export const stats = [
-  { value: "4+", label: "Years building frontend products" },
-  { value: "5", label: "Live projects and AI capability highlights" },
-  { value: "AI", label: "Integration mindset for optimization and automation" },
+  { value: "3+", label: "Years building production frontend products" },
+  { value: "30%", label: "Manual workflow effort cut through Azure AI automation" },
+  { value: "7", label: "Live projects across AI, education, housing, and consulting" },
   { value: "Remote", label: "Ready for global engineering teams" }
 ];
 
@@ -65,52 +67,74 @@ export const expertise = [
   {
     category: "Frontend Development",
     icon: Code2,
-    items: ["Next.js", "React.js", "JavaScript", "TypeScript", "Tailwind CSS", "REST APIs"]
+    items: ["Next.js", "React.js", "JavaScript (ES6+)", "TypeScript", "Tailwind CSS", "HTML5 / CSS3"]
   },
   {
     category: "AI & Automation",
     icon: Bot,
-    items: ["Azure AI", "Prompt Engineering", "AI Integration", "Microsoft Copilot Studio", "Microsoft Foundry"]
+    items: ["Microsoft Azure AI", "AI Agents", "Workflow Automation", "Prompt Engineering", "Business Process Automation"]
   },
   {
     category: "Tools & Platforms",
     icon: Settings2,
-    items: ["Git", "Vercel", "GitHub", "CMS-ready structure", "API workflows"]
+    items: ["Git", "GitHub", "Vercel", "Netlify", "Docker", "Azure App Services", "CI/CD"]
   },
   {
     category: "Performance & Optimization",
     icon: Gauge,
-    items: ["SEO", "Accessibility", "Core Web Vitals", "Performance Optimization", "Conversion UX"]
+    items: ["SEO", "Accessibility (WCAG)", "Performance Optimization", "Code Splitting", "Lazy Loading", "Cross-Browser Compatibility"]
   },
   {
     category: "Collaboration / Workflow",
     icon: Users2,
-    items: ["Remote teams", "Technical support", "Product delivery", "Documentation", "Stakeholder alignment"]
+    items: ["REST API Integration", "Azure DevOps", "Component-Based Architecture", "Design Systems", "Cross-functional Collaboration"]
   }
 ];
 
 export const projects: Project[] = [
   {
-    name: "AI-Integrated Product Work",
-    type: "AI / Optimization / Conversion",
+    name: "AI Recruitment Platform",
+    type: "AI / Private Internal Tool / HR Automation",
     description:
-      "Beyond building websites, I integrate AI solutions into products to improve engagement, automation, personalization, and conversion.",
+      "A private, internal platform I built for Techspecialist's HR team that automates candidate screening, CV evaluation, and first-stage interviews using Azure AI. Not publicly accessible.",
     impact:
-      "Expanded product value beyond static web presence into smarter, more adaptive digital experiences.",
+      "Reduced manual recruitment workload and improved screening consistency by giving HR an AI-assisted first pass on every applicant.",
     caseStudy: {
       overview:
-        "This capability block shows how I combine frontend engineering with AI-powered product thinking. The focus is not novelty; it is using AI to make digital products more useful, responsive, and conversion-aware.",
+        "Built as a private, internal Techspecialist tool for the HR team, this platform pairs an AI CV evaluator with an AI-led first-round interviewer to modernize a manual hiring pipeline.",
       goal:
-        "The goal is to help businesses move from static web experiences to intelligent product flows that can improve engagement, reduce friction, and automate important user or operational interactions.",
+        "HR needed a way to process high applicant volumes without losing screening quality, freeing recruiters to focus on final-stage, high-judgment decisions.",
       contribution:
-        "I design and integrate AI-enhanced features into product experiences, connecting interface design, prompt engineering, Azure AI capabilities, and automation workflows into practical user journeys.",
+        "I built the frontend for CV submission, evaluation review, and interview flows, and worked with the automation team to connect the UI to Azure AI screening and interview logic.",
       outcome:
-        "The result is a stronger product experience that can support personalization, smarter interaction, better optimization, and more useful decision support for businesses and end users."
+        "Recruiters now review a shortlist of AI-evaluated, interview-ready candidates instead of manually screening every application, contributing to a 30% cut in manual processing time."
     },
-    stack: ["AI Integration", "Azure AI", "Automation", "Product UX", "Conversion"],
+    stack: ["React.js", "Next.js", "Azure AI", "Workflow Automation", "Enterprise UI"],
     link: "#contact",
     icon: "ai",
     accent: "bg-[linear-gradient(135deg,#312e81,#7c3aed_45%,#14b8a6)]"
+  },
+  {
+    name: "Techspecialist Limited",
+    type: "Corporate / AI Readiness / Managed IT Services",
+    description:
+      "The corporate website for Techspecialist Limited, positioning the company around executive intelligence, AI readiness, automation, and managed IT services.",
+    impact:
+      "Gives public, private, and enterprise-sector clients a clear, professional entry point into Techspecialist's AI readiness and automation services.",
+    caseStudy: {
+      overview:
+        "Techspecialist Limited needed a corporate site that could communicate complex, Microsoft-powered digital transformation services to a broad range of decision-makers.",
+      goal:
+        "The goal was to present AI readiness assessment, workflow automation, and executive dashboard offerings clearly enough for both technical and non-technical stakeholders to act on.",
+      contribution:
+        "I built and continue to maintain the responsive frontend, covering service-led content sections, layout, and ongoing content and UX improvements.",
+      outcome:
+        "The site clearly communicates Techspecialist's executive intelligence and automation positioning, supporting the company's enterprise and public-sector outreach."
+    },
+    stack: ["Next.js", "React.js", "Tailwind CSS", "Azure AI", "Microsoft Power Platform"],
+    link: "https://techspecialistlimited.com/",
+    icon: "corporate",
+    accent: "bg-[linear-gradient(135deg,#0f172a,#4c1d95_48%,#22d3ee)]"
   },
   {
     name: "NECA ICT Academy",
@@ -155,6 +179,28 @@ export const projects: Project[] = [
     link: "https://hmip.nmrc.com.ng/",
     icon: "housing",
     accent: "bg-[linear-gradient(135deg,#082f49,#0369a1_48%,#facc15)]"
+  },
+  {
+    name: "Executive Corporate Website (Kadir Salami)",
+    type: "Executive Branding / Corporate",
+    description:
+      "A professional executive branding website designed and launched to strengthen personal and corporate visibility online.",
+    impact:
+      "Strengthened executive branding and online visibility with a fast, polished, accessible site.",
+    caseStudy: {
+      overview:
+        "This executive corporate website was built to establish a credible, professional online presence for personal and business branding.",
+      goal:
+        "The goal was to launch a fast, polished site that reflects an executive-level brand and performs well on both desktop and mobile.",
+      contribution:
+        "I designed and built responsive layouts optimized for performance and accessibility, and launched the site end-to-end.",
+      outcome:
+        "The result is a professional executive presence at kadirsalami.com that supports the client's branding and visibility goals."
+    },
+    stack: ["Next.js", "Tailwind CSS", "Responsive Design", "Performance"],
+    link: "https://kadirsalami.com/",
+    icon: "corporate",
+    accent: "bg-[linear-gradient(135deg,#1c1917,#78350f_48%,#f59e0b)]"
   },
   {
     name: "Studio3 Launchpad",
@@ -205,30 +251,38 @@ export const projects: Project[] = [
 export const experience = [
   {
     title: "Business Automation Associate",
-    company: "Techspecialist Limited",
-    period: "2025 - Present",
+    company: "Techspecialist (Mswitch Group)",
+    period: "Apr 2026 - Present",
     summary:
-      "Supporting automation-focused product delivery by connecting business workflows, AI-enhanced solutions, and practical frontend experiences that improve efficiency and engagement."
+      "Built AI-powered automation workflows with Azure AI that cut manual processing time by 30% across HR and operations, including an enterprise AI recruitment platform that automates CV evaluation and first-stage interviews."
   },
   {
     title: "Frontend Developer / Technical Support",
     company: "Mswitch Group",
-    period: "2023 - 2025",
+    period: "Jan 2026 - Apr 2026",
     summary:
-      "Built and supported digital product interfaces while solving technical issues across frontend delivery, user support, implementation, and operational product needs."
+      "Built and maintained scalable React.js and Next.js applications, launched the kadirsalami.com executive corporate website, and provided technical support that improved platform reliability."
   },
   {
     title: "Frontend Developer",
     company: "Shamzbridge Consult",
-    period: "2024 - 2025",
+    period: "Jan 2024 - Dec 2025",
     summary:
-      "Delivered conversion-focused web interfaces for consulting and capacity-building services, improving brand clarity, service communication, and responsive user journeys."
+      "Delivered responsive web applications and corporate websites for consulting, education, and professional-services clients, improving engagement by roughly 25% through performance and usability work."
+  },
+  {
+    title: "Frontend Developer Trainee",
+    company: "TIIDELab Initiative (Cohort 5)",
+    period: "2023 - 2024",
+    summary:
+      "Completed an intensive frontend engineering program covering React.js, JavaScript, responsive design, and Git workflows, building multiple responsive applications through collaborative development."
   }
 ];
 
 export const certifications = [
-  "Microsoft Certified: Azure AI Engineer Associate (AI-103)",
-  "TIIDELab Initiative Cohort 5 - Frontend Developer (2023)"
+  "Developing AI Apps and Agents on Microsoft Azure (AI-103) - Microsoft Certified",
+  "Nigeria Certificate in Education (NCE), Computer Science / Physics - Kwara State College of Education",
+  "Frontend Developer - Cohort 5 (2023) - TIIDELab Initiative"
 ];
 
 export const contactLinks = [
@@ -236,6 +290,18 @@ export const contactLinks = [
     label: "abbastaofeeq.001@gmail.com",
     href: "mailto:abbastaofeeq.001@gmail.com",
     icon: Mail,
+    external: false
+  },
+  {
+    label: "+234 902 859 2933",
+    href: "tel:+2349028592933",
+    icon: Phone,
+    external: false
+  },
+  {
+    label: "Abuja, Nigeria",
+    href: "#contact",
+    icon: MapPin,
     external: false
   },
   {

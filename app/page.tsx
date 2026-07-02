@@ -9,6 +9,7 @@ import {
 import { AnimatedSection } from "@/components/animated-section";
 import { ContactForm } from "@/components/contact-form";
 import { ContactSectionPopup } from "@/components/contact-section-popup";
+import { DownloadCvButton } from "@/components/download-cv-button";
 import { ProjectCard } from "@/components/project-card";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -54,7 +55,7 @@ export default function Home() {
               products that improve engagement, simplify workflows, and support
               measurable business outcomes.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col flex-wrap gap-3 sm:flex-row">
               <a className="btn-primary" href="#projects">
                 View Projects
                 <ArrowUpRight className="h-4 w-4" />
@@ -63,6 +64,7 @@ export default function Home() {
                 Let&apos;s Work Together
                 <Mail className="h-4 w-4" />
               </a>
+              <DownloadCvButton className="btn-secondary" />
             </div>
           </AnimatedSection>
 
@@ -136,16 +138,17 @@ export default function Home() {
           </AnimatedSection>
           <AnimatedSection delay={0.08} className="space-y-6">
             <p className="text-xl leading-9 text-white/72">
-              I am a Frontend Engineer with 4+ years of experience building
-              result-driven web products with Next.js, React.js, JavaScript, and
+              I am a Frontend Engineer with 3+ years of experience building
+              production web products with Next.js, React.js, TypeScript, and
               modern frontend tooling. My work sits where clean interfaces,
               performance, and business goals meet.
             </p>
             <p className="text-lg leading-8 text-white/60">
-              Across public and private sector products, I have delivered
-              responsive interfaces, accessible user journeys, and conversion
-              focused websites. I also integrate AI solutions into products to
-              improve automation, optimization, engagement, and decision flow.
+              Across consulting, education, and housing sector products, I have
+              delivered responsive interfaces, accessible user journeys, and
+              conversion focused websites. I also build AI-powered automation
+              with Azure AI, recently cutting manual workflow effort by 30% for
+              HR and operations teams.
             </p>
             <div className="flex flex-wrap gap-3">
               {[
