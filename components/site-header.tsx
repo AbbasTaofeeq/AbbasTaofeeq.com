@@ -22,7 +22,6 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
         if (visible?.target.id) {
           setActive(`#${visible.target.id}`);
         }
@@ -39,10 +38,10 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
       key={item.href}
       href={item.href}
       onClick={() => setOpen(false)}
-      className={`rounded-full px-3 py-2 text-sm transition ${
+      className={`font-caps rounded-full px-4 py-2 text-[11.5px] transition ${
         active === item.href
-          ? "bg-white text-[#07080c]"
-          : "text-white/62 hover:bg-white/8 hover:text-white"
+          ? "bg-[var(--accent)] text-white"
+          : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface-soft)]"
       }`}
     >
       {item.label}
@@ -50,50 +49,51 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
   );
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07080c]/78 px-5 py-4 backdrop-blur-xl sm:px-8 lg:px-10">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--border)] bg-white/80 px-5 py-3.5 backdrop-blur-xl sm:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-3" aria-label="Home">
-          <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-teal-300/30 bg-teal-300/10">
-            <img
-              src="https://res.cloudinary.com/daqmbfctv/image/upload/c_crop,g_north_west,h_1115,w_1024/ChatGPT_Image_Mar_23_2026_02_41_23_PM_cuwmuf.png"
-              alt="Logo"
-              className="h-full w-full object-cover"
-            />
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-[var(--accent)] text-white font-display font-bold text-[14px]">
+            AT
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block font-display font-semibold">
+            <span className="block font-display font-semibold text-[15px] text-[var(--foreground)]">
               Abbas Taofeeq
             </span>
-            <span className="block text-xs text-white/45">
-              Frontend + AI Integration
+            <span className="font-caps block text-[10px] text-[var(--muted-2)]">
+              Frontend + AI
             </span>
           </span>
         </a>
 
         <nav
-          className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex"
+          className="hidden items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--background)] p-1 md:flex"
           aria-label="Primary"
         >
           {navItems.map(renderLink)}
         </nav>
 
-        <a className="btn-secondary hidden min-h-11 px-4 md:inline-flex" href="#contact">
-          Contact
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            className="hidden md:inline-flex min-h-9 rounded-full bg-[var(--accent)] px-4 py-2 text-[13.5px] font-medium text-white hover:bg-[var(--accent-hover)] transition shadow-sm"
+            href="#contact"
+          >
+            Contact
+          </a>
 
-        <button
-          type="button"
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/12 bg-white/[0.04] text-white md:hidden"
-          aria-label={open ? "Close navigation" : "Open navigation"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            className="grid h-9 w-9 place-items-center rounded-full border border-[var(--border)] bg-white text-[var(--foreground)] md:hidden"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
+        </div>
       </div>
 
       {open ? (
         <nav
-          className="mx-auto mt-4 grid max-w-7xl gap-2 rounded-2xl border border-white/10 bg-[#0d1017] p-3 md:hidden"
+          className="mx-auto mt-3 grid max-w-[1280px] gap-1 rounded-2xl border border-[var(--border)] bg-white p-2 md:hidden shadow-sm"
           aria-label="Mobile"
         >
           {navItems.map(renderLink)}

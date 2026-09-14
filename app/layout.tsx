@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap"
 });
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-space",
+  variable: "--font-fraunces",
   display: "swap"
 });
 
 export const metadata: Metadata = {
   title: "Abbas Taofeeq | Frontend Engineer for AI-Powered Web Applications",
   description:
-    "Portfolio of Abbas Taofeeq, a Frontend Engineer specializing in AI-powered, high-conversion web applications for remote teams and modern businesses.",
+    "Portfolio of Abbas Taofeeq, a Frontend Engineer building intelligent, AI-powered web applications for organizations and modern businesses — not just functional websites.",
   keywords: [
     "Abbas Taofeeq",
     "Frontend Engineer",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abbas Taofeeq | Frontend Engineer",
     description:
-      "AI-powered, high-conversion web applications built with modern frontend engineering.",
+      "Intelligent, AI-powered web applications built with modern frontend engineering.",
     type: "website",
     locale: "en_US",
     url: "https://example.com",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abbas Taofeeq | Frontend Engineer",
     description:
-      "Frontend Engineer specializing in AI-powered, high-conversion web applications."
+      "Frontend Engineer building intelligent, AI-powered web applications — not just functional websites."
   },
   icons: {
     icon: "/favicon.svg"
@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className={`${plusJakartaSans.variable} ${fraunces.variable}`}>
         {children}
       </body>
     </html>

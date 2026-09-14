@@ -55,7 +55,7 @@ export function ContactForm() {
       <form className="contact-panel grid gap-5" onSubmit={handleSubmit}>
         <div>
           <p className="font-display text-2xl font-semibold">Start a conversation</p>
-          <p className="mt-2 text-sm leading-6 text-white/54">
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
             Send a quick note about the role, product, or collaboration you have
             in mind.
           </p>
