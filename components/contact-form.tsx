@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { MagneticButton } from "@/components/magnetic-button";
 import { SubmissionModal } from "./submission-modal";
 
 // Initialize EmailJS with your public key
@@ -99,13 +100,14 @@ export function ContactForm() {
             required
           />
         </div>
-        <button
+        <MagneticButton
+          as="button"
           className="btn-primary w-fit"
           type="submit"
           disabled={isLoading}
         >
           {isLoading ? "Sending..." : "Send Message"}
-        </button>
+        </MagneticButton>
       </form>
       <SubmissionModal
         isOpen={showModal}

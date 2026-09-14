@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { DURATION, EASE_DRAW, EASE_ENTER } from "@/lib/motion";
 
 function MaskLine({ children, reduced, delay }: { children: string; reduced: boolean; delay: number }) {
   return (
@@ -10,7 +11,7 @@ function MaskLine({ children, reduced, delay }: { children: string; reduced: boo
         className="block"
         initial={reduced ? { opacity: 0 } : { y: "110%" }}
         animate={reduced ? { opacity: 1 } : { y: "0%" }}
-        transition={{ duration: reduced ? 0.4 : 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: reduced ? 0.4 : DURATION.hero, delay, ease: EASE_ENTER }}
       >
         {children}
       </motion.span>
@@ -24,7 +25,7 @@ function UnderlineStroke({ reduced }: { reduced: boolean }) {
       viewBox="0 0 320 16"
       preserveAspectRatio="none"
       aria-hidden="true"
-      className="pointer-events-none absolute -bottom-1 left-0 h-[0.32em] w-full text-[var(--clay)] sm:-bottom-2"
+      className="pointer-events-none absolute -bottom-3 left-0 h-[0.28em] w-full text-[var(--clay)] sm:-bottom-4"
     >
       <motion.path
         d="M2 10.5C58 3 130 2 178 7C226 12 268 6 318 8.5"
@@ -34,7 +35,7 @@ function UnderlineStroke({ reduced }: { reduced: boolean }) {
         strokeLinecap="round"
         initial={reduced ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
         animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 0.9, delay: reduced ? 0 : 0.95, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: DURATION.hero, delay: reduced ? 0 : 0.95, ease: EASE_DRAW }}
       />
     </svg>
   );
@@ -53,7 +54,7 @@ export function HeroHeadline() {
     <div ref={ref}>
       <motion.h1
         style={reduced ? undefined : { letterSpacing, y, opacity }}
-        className="font-display text-[clamp(3.4rem,9vw,6.4rem)] font-semibold leading-[0.88] tracking-tight text-[var(--foreground)]"
+        className="font-display text-hero font-semibold leading-[0.9] tracking-tight text-[var(--foreground)]"
       >
         <MaskLine reduced={reduced} delay={0.15}>
           Abbas

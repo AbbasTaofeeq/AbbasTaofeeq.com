@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Fraunces, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -14,7 +15,16 @@ const fraunces = Fraunces({
   display: "swap"
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap"
+});
+
+const SITE_URL = "https://abbastaofeeq.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Abbas Taofeeq | Frontend Engineer for AI-Powered Web Applications",
   description:
     "Portfolio of Abbas Taofeeq, a Frontend Engineer building intelligent, AI-powered web applications for organizations and modern businesses — not just functional websites.",
@@ -29,14 +39,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Abbas Taofeeq" }],
   creator: "Abbas Taofeeq",
-  metadataBase: new URL("https://example.com"),
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
     title: "Abbas Taofeeq | Frontend Engineer",
     description:
       "Intelligent, AI-powered web applications built with modern frontend engineering.",
     type: "website",
     locale: "en_US",
-    url: "https://example.com",
+    url: SITE_URL,
     siteName: "Abbas Taofeeq Portfolio"
   },
   twitter: {
@@ -56,8 +68,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${plusJakartaSans.variable} ${fraunces.variable}`}>
+    <html lang="en">
+      <body className={`${plusJakartaSans.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
+        <SmoothScroll />
         {children}
       </body>
     </html>

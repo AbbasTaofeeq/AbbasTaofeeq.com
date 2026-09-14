@@ -30,16 +30,8 @@ export type Project = {
   role: string;
   year: string;
   image: string;
-  caseStudy: {
-    overview: string;
-    goal: string;
-    contribution: string;
-    outcome: string;
-  };
   stack: string[];
   link: string;
-  icon: "ai" | "education" | "housing" | "startup" | "corporate";
-  accent: string;
 };
 
 type SocialIcon = ComponentType<SVGProps<SVGSVGElement>>;
@@ -52,8 +44,9 @@ export type ContactLink = {
 };
 
 export const navItems: NavItem[] = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#projects" },
-  { label: "Expertise", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" }
 ];
@@ -103,16 +96,8 @@ export const projects: Project[] = [
     role: "Frontend + IA",
     year: "2024",
     image: "/images/projects/techspecialist.png",
-    caseStudy: {
-      overview: "Techspecialist needed to communicate complex Microsoft-powered transformation to non-technical decision makers.",
-      goal: "Make AI readiness and executive dashboards understandable and actionable.",
-      contribution: "Built responsive frontend with composable service sections and live Power BI visuals.",
-      outcome: "Stronger enterprise positioning and faster client onboarding."
-    },
     stack: ["Next.js", "Tailwind", "Azure AI"],
-    link: "https://techspecialistlimited.com/",
-    icon: "corporate",
-    accent: "bg-[#6B7F59]"
+    link: "https://techspecialistlimited.com/"
   },
   {
     name: "NECA ICT Academy",
@@ -123,16 +108,8 @@ export const projects: Project[] = [
     role: "Frontend + UX",
     year: "2024",
     image: "/images/projects/neca-ict.png",
-    caseStudy: {
-      overview: "Public education platform to equip Nigerians with practical ICT skills and certifications.",
-      goal: "Communicate programs clearly and build trust for enrollment.",
-      contribution: "Shaped responsive UX that makes courses and enrollment easy to parse.",
-      outcome: "Clearer program discovery and higher enrollment intent."
-    },
     stack: ["React", "Responsive", "Education UX"],
-    link: "https://www.necaictacademy.org",
-    icon: "education",
-    accent: "bg-[#6B7F59]"
+    link: "https://www.necaictacademy.org"
   },
   {
     name: "Studio3 Launchpad",
@@ -143,16 +120,8 @@ export const projects: Project[] = [
     role: "Frontend Engineering",
     year: "2023",
     image: "/images/projects/studio3.png",
-    caseStudy: {
-      overview: "Structured platform for aspiring tech talent through cohort-based practical training.",
-      goal: "Make quality training feel accessible while staying credible.",
-      contribution: "Built responsive interfaces with clear pathways and program clarity.",
-      outcome: "Cleaner, more engaging learning experience."
-    },
     stack: ["Next.js", "EdTech", "UI/UX"],
-    link: "https://www.studio3launchpad.com/",
-    icon: "startup",
-    accent: "bg-[#6B7F59]"
+    link: "https://www.studio3launchpad.com/"
   },
   {
     name: "AI Recruitment Platform",
@@ -162,17 +131,9 @@ export const projects: Project[] = [
     metric: "30% less manual work",
     role: "Frontend + AI Workflow",
     year: "2024",
-    image: "/images/projects/ai-recruitment.png",
-    caseStudy: {
-      overview: "Private HR tool pairing AI CV evaluator with AI-led interviews to modernize hiring.",
-      goal: "Process high volume without losing quality, freeing recruiters for final decisions.",
-      contribution: "Built frontend for submission, review, and interview flows connected to Azure AI.",
-      outcome: "Shortlist of interview-ready candidates instead of manual screening."
-    },
+    image: "/images/projects/ai-recruitment.svg",
     stack: ["React", "Next.js", "Azure AI"],
-    link: "#contact",
-    icon: "ai",
-    accent: "bg-[#6B7F59]"
+    link: "#contact"
   },
   {
     name: "HMIP - NMRC",
@@ -183,16 +144,8 @@ export const projects: Project[] = [
     role: "Frontend + Data UX",
     year: "2023",
     image: "/images/projects/hmip.png",
-    caseStudy: {
-      overview: "Portal offering mortgage tools, research, housing stats, and decision support.",
-      goal: "Make complex housing data approachable.",
-      contribution: "Focused on scannable data tables and clear tool flows.",
-      outcome: "Reduced friction in housing decisions."
-    },
     stack: ["Data UX", "Responsive", "Frontend"],
-    link: "#contact",
-    icon: "housing",
-    accent: "bg-[#6B7F59]"
+    link: "#contact"
   },
   {
     name: "Kadir Salami",
@@ -203,16 +156,8 @@ export const projects: Project[] = [
     role: "Design + Build",
     year: "2023",
     image: "/images/projects/kadir.png",
-    caseStudy: {
-      overview: "Credible professional presence for executive brand.",
-      goal: "Fast, polished, accessible site that reflects executive level.",
-      contribution: "Designed and built responsive layouts end-to-end.",
-      outcome: "Professional presence at kadirsalami.com"
-    },
     stack: ["Next.js", "Tailwind", "Performance"],
-    link: "https://kadirsalami.com/",
-    icon: "corporate",
-    accent: "bg-[#6B7F59]"
+    link: "https://kadirsalami.com/"
   }
 ];
 
@@ -259,4 +204,9 @@ export const contactLinks = [
   { label: "X", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
 ];
 
-export const socialLinks = contactLinks;
+export const socialLinks: ContactLink[] = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/abbas-taofeeq-olakunle1/", icon: LinkedInIcon, external: true },
+  { label: "GitHub", href: "https://github.com/AbbasTaofeeq", icon: GitHubIcon, external: true },
+  { label: "Instagram", href: "https://www.instagram.com/abbastaofeeq_123/", icon: InstagramIcon, external: true },
+  { label: "X", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
+];

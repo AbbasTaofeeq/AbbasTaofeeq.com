@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Check, X } from "lucide-react";
+import { DURATION, EASE_DRAW, SPRING } from "@/lib/motion";
 
 interface SubmissionModalProps {
   isOpen: boolean;
@@ -17,7 +18,7 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-    exit: { opacity: 0, transition: { duration: 0.2 } }
+    exit: { opacity: 0, transition: { duration: DURATION.fast } }
   };
 
   const modalVariants = {
@@ -27,10 +28,10 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
       y: 0,
       scale: 1,
       transition: shouldReduceMotion
-        ? { duration: 0.2 }
-        : { type: "spring" as const, stiffness: 260, damping: 24 }
+        ? { duration: DURATION.fast }
+        : SPRING.snappy
     },
-    exit: { opacity: 0, y: shouldReduceMotion ? 0 : 10, scale: shouldReduceMotion ? 1 : 0.98, transition: { duration: 0.2 } }
+    exit: { opacity: 0, y: shouldReduceMotion ? 0 : 10, scale: shouldReduceMotion ? 1 : 0.98, transition: { duration: DURATION.fast } }
   };
 
   return (
@@ -49,7 +50,7 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
             <motion.div
               role="status"
               aria-live="polite"
-              className="pointer-events-auto w-full max-w-sm rounded-[16px] border border-[var(--border)] bg-[var(--card-bg)] p-7 text-center shadow-[0_24px_64px_rgba(0,0,0,0.18)]"
+              className="pointer-events-auto w-full max-w-sm rounded-[var(--radius-tab)] border border-[var(--border)] bg-[var(--card-bg)] p-7 text-center shadow-[0_24px_64px_rgba(0,0,0,0.18)]"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -68,7 +69,7 @@ export function SubmissionModal({ isOpen, type, message }: SubmissionModalProps)
                     strokeLinejoin="round"
                     initial={{ pathLength: 0, opacity: shouldReduceMotion ? 1 : 0 }}
                     animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: shouldReduceMotion ? 0.15 : 0.5, delay: shouldReduceMotion ? 0 : 0.15, ease: [0.65, 0, 0.35, 1] }}
+                    transition={{ duration: shouldReduceMotion ? 0.15 : 0.5, delay: shouldReduceMotion ? 0 : 0.15, ease: EASE_DRAW }}
                   />
                 </svg>
               </div>
