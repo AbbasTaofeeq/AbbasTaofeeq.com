@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { AnimatedSection } from "@/components/animated-section";
 import { TiltCard } from "@/components/tilt-card";
@@ -14,33 +14,25 @@ type ProjectCardProps = {
 export function ProjectCard({ project, delay = 0 }: ProjectCardProps) {
   const isExternal = project.link.startsWith("http");
   const [imgError, setImgError] = useState(false);
+  const showImage = Boolean(project.image) && !imgError;
 
   return (
     <AnimatedSection delay={delay} className="h-full">
       <TiltCard className="h-full">
         <div className="project-card group flex h-full flex-col">
           {/* Image */}
-          <div className="project-image-wrap">
-            {!imgError ? (
+          {showImage ? (
+            <div className="project-image-wrap">
               <img
                 src={project.image}
                 alt={project.name}
                 loading="lazy"
                 onError={() => setImgError(true)}
               />
-            ) : (
-              <div className="w-full h-full grid place-items-center bg-[var(--surface-soft)] text-[var(--muted-2)]">
-                <div className="text-center p-6">
-                  <div className="mx-auto mb-2 h-8 w-8 rounded-[var(--radius-chip)] bg-white border border-[var(--border)] grid place-items-center">
-                    <ExternalLink className="h-4 w-4" />
-                  </div>
-                  <p className="text-xs font-medium">{project.name}</p>
-                </div>
-              </div>
-            )}
-            {/* Subtle top fade for polish */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
+              {/* Subtle top fade for polish */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          ) : null}
 
           {/* Content */}
           <div className="project-content">

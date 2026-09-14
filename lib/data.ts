@@ -131,7 +131,7 @@ export const projects: Project[] = [
     metric: "30% less manual work",
     role: "Frontend + AI Workflow",
     year: "2024",
-    image: "/images/projects/ai-recruitment.svg",
+    image: "",
     stack: ["React", "Next.js", "Azure AI"],
     link: "#contact"
   },

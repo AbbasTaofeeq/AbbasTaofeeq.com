@@ -14,7 +14,7 @@ export function SiteHeader({ navItems, socialLinks }: SiteHeaderProps) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 px-5 py-4 sm:px-8 lg:px-10">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 px-5 py-4 backdrop-blur-md sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4">
           <a href="#home" className="flex items-center gap-3" aria-label="Home">
             <span className="grid h-9 w-9 place-items-center rounded-full bg-[var(--accent)] text-white font-display font-bold text-[14px]">
