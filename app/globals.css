@@ -210,19 +210,21 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
 .project-image-wrap {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--surface-soft);
   border-bottom: 1px solid var(--border);
 }
-.project-image-wrap img {
+/* Direct child only — an illustration nested a level deeper (InternalProjectIllustration)
+   keeps its own sizing instead of being stretched to fill the wrap. */
+.project-image-wrap > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
   transition: transform 500ms var(--ease-out);
 }
-.project-card:hover .project-image-wrap img {
+.project-card:hover .project-image-wrap > img {
   transform: scale(1.04);
 }
 

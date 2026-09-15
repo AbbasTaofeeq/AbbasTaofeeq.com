@@ -10,14 +10,15 @@ import { HeroHeadline } from "@/components/hero-headline";
 import { MagneticButton } from "@/components/magnetic-button";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { projects } from "@/content/projects";
 import {
   certifications,
   contactLinks,
   experience,
   expertise,
   navItems,
-  projects,
   socialLinks,
   stats
 } from "@/lib/data";
@@ -33,16 +34,13 @@ export default function Home() {
       {/* HERO - editorial masthead */}
       <section id="home" className="relative border-b border-[var(--border)] px-6 pt-32 pb-14 sm:px-10 lg:px-10">
         <div className="mx-auto w-full max-w-[1280px]">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] pb-4">
-            <p className="[font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
-              Frontend Engineer <span className="text-[var(--border-strong)]">—</span> Building Intelligent Web Apps
-            </p>
+          <div className="flex flex-wrap items-center gap-3 border-b border-[var(--border)] pb-4">
             <p className="flex items-center gap-2 [font-family:var(--font-mono)] text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="status-pulse absolute inline-flex h-full w-full rounded-full bg-[var(--accent)]" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
               </span>
-              Abuja, NG · Available for work
+              Frontend Engineer <span className="text-[var(--border-strong)]">—</span> Building Intelligent Web Apps
             </p>
           </div>
 
@@ -155,7 +153,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <ProjectCard
-                key={project.name}
+                key={project.slug}
                 project={project}
                 delay={index * 0.04}
               />
@@ -249,32 +247,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-[var(--border)] bg-white px-6 py-8 sm:px-10">
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-5 text-[13px] text-[var(--muted-2)] md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Abbas Taofeeq. All rights reserved.</p>
-          <nav className="flex flex-wrap gap-4" aria-label="Footer">
-            {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="link-draw text-[var(--muted-2)] hover:text-[var(--foreground)]">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <div className="flex gap-2.5">
-            {socialLinks.map((link) => (
-              <a
-                className="grid h-8 w-8 place-items-center rounded-[var(--radius-chip)] border border-[var(--border)] bg-white text-[var(--muted-2)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
-                href={link.href}
-                key={link.label}
-                aria-label={link.label}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noreferrer" : undefined}
-              >
-                <link.icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <SiteFooter navItems={navItems} socialLinks={socialLinks} />
     </main>
   );
 }

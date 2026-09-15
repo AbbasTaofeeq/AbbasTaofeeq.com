@@ -15,9 +15,12 @@ export function SmoothScroll() {
     });
 
     const onAnchorClick = (event: MouseEvent) => {
-      const anchor = (event.target as HTMLElement).closest("a[href^='#']");
+      const anchor = (event.target as HTMLElement).closest("a[href*='#']") as HTMLAnchorElement | null;
       if (!anchor) return;
-      const id = anchor.getAttribute("href")?.slice(1);
+      // anchor.href (not getAttribute) so relative hrefs like "/#contact" resolve to a full URL.
+      const url = new URL(anchor.href, window.location.href);
+      if (url.pathname !== window.location.pathname) return; // different route — let normal navigation happen
+      const id = url.hash.slice(1);
       if (!id) return;
       const target = document.getElementById(id);
       if (!target) return;

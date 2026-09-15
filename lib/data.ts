@@ -21,19 +21,6 @@ export type NavItem = {
   href: string;
 };
 
-export type Project = {
-  name: string;
-  type: string;
-  description: string;
-  impact: string;
-  metric: string;
-  role: string;
-  year: string;
-  image: string;
-  stack: string[];
-  link: string;
-};
-
 type SocialIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
 export type ContactLink = {
@@ -43,12 +30,13 @@ export type ContactLink = {
   external: boolean;
 };
 
+// Root-relative (not bare "#…") so nav works the same from "/" and from "/projects/[slug]".
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" }
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Work", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export const stats = [
@@ -86,81 +74,6 @@ export const expertise = [
   }
 ];
 
-export const projects: Project[] = [
-  {
-    name: "Techspecialist Limited",
-    type: "Corporate / AI Readiness",
-    description: "Corporate site positioning Techspecialist around executive intelligence and AI readiness with live dashboard visuals.",
-    impact: "Clear entry point for enterprise and public sector clients into AI services.",
-    metric: "10wk to live dashboard",
-    role: "Frontend + IA",
-    year: "2024",
-    image: "/images/projects/techspecialist.png",
-    stack: ["Next.js", "Tailwind", "Azure AI"],
-    link: "https://techspecialistlimited.com/"
-  },
-  {
-    name: "NECA ICT Academy",
-    type: "Education / Employability",
-    description: "Public-facing ICT training platform focused on digital skills and workforce readiness.",
-    impact: "Improved access to employability training for broad learner audience.",
-    metric: "500+ learners onboarded",
-    role: "Frontend + UX",
-    year: "2024",
-    image: "/images/projects/neca-ict.png",
-    stack: ["React", "Responsive", "Education UX"],
-    link: "https://www.necaictacademy.org"
-  },
-  {
-    name: "Studio3 Launchpad",
-    type: "EdTech / Learning Platform",
-    description: "Cohort-based learning platform for practical tech skills and affordable training.",
-    impact: "Presented as credible modern learning brand.",
-    metric: "Cohort growth +40%",
-    role: "Frontend Engineering",
-    year: "2023",
-    image: "/images/projects/studio3.png",
-    stack: ["Next.js", "EdTech", "UI/UX"],
-    link: "https://www.studio3launchpad.com/"
-  },
-  {
-    name: "AI Recruitment Platform",
-    type: "AI / HR Automation",
-    description: "Internal AI platform automating CV evaluation and first-stage interviews for HR.",
-    impact: "Cut manual screening and improved consistency.",
-    metric: "30% less manual work",
-    role: "Frontend + AI Workflow",
-    year: "2024",
-    image: "",
-    stack: ["React", "Next.js", "Azure AI"],
-    link: "#contact"
-  },
-  {
-    name: "HMIP - NMRC",
-    type: "Housing / Data Portal",
-    description: "Housing market info portal with mortgage tools and property discovery.",
-    impact: "Easier navigation for property and financing decisions.",
-    metric: "25% better task completion",
-    role: "Frontend + Data UX",
-    year: "2023",
-    image: "/images/projects/hmip.png",
-    stack: ["Data UX", "Responsive", "Frontend"],
-    link: "#contact"
-  },
-  {
-    name: "Kadir Salami",
-    type: "Executive Branding",
-    description: "Executive branding site for personal and corporate visibility.",
-    impact: "Strengthened executive presence online.",
-    metric: "100 lighthouse",
-    role: "Design + Build",
-    year: "2023",
-    image: "/images/projects/kadir.png",
-    stack: ["Next.js", "Tailwind", "Performance"],
-    link: "https://kadirsalami.com/"
-  }
-];
-
 export const experience = [
   {
     title: "Business Automation Associate",
@@ -190,7 +103,7 @@ export const experience = [
 
 export const certifications = [
   "Developing AI Apps and Agents on Microsoft Azure (AI-103) - Microsoft",
-  "Nigeria Certificate in Education (NCE), Computer Science / Physics",
+  "Nigeria Certificate in Education (NCE), Computer Science / Physics (2024)",
   "Frontend Developer - Cohort 5 (2023) - TIIDELab"
 ];
 
@@ -201,7 +114,7 @@ export const contactLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/abbas-taofeeq-olakunle1/", icon: LinkedInIcon, external: true },
   { label: "GitHub", href: "https://github.com/AbbasTaofeeq", icon: GitHubIcon, external: true },
   { label: "Instagram", href: "https://www.instagram.com/abbastaofeeq_123/", icon: InstagramIcon, external: true },
-  { label: "X", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
+  { label: "@AbbasTaofeeq", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
 ];
 
 export const socialLinks: ContactLink[] = [
