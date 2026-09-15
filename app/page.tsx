@@ -205,11 +205,14 @@ export default function Home() {
             {certifications.map((cert, index) => (
               <AnimatedSection
                 delay={index * 0.05}
-                key={cert}
-                className="flex items-center gap-3 rounded-[var(--radius-tab)] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-tab)]"
+                key={cert.title}
+                className="flex items-start gap-3 rounded-[var(--radius-tab)] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-tab)]"
               >
-                <Award className="h-5 w-5 text-[var(--accent)]" />
-                <p className="font-display text-[15px] font-semibold text-[var(--foreground)]">{cert}</p>
+                <Award className="mt-0.5 h-5 w-5 shrink-0 text-[var(--accent)]" />
+                <div>
+                  <p className="font-display text-[15px] font-semibold leading-snug text-[var(--foreground)]">{cert.title}</p>
+                  <p className="mt-1 text-[12.5px] text-[var(--muted-2)]">{cert.issuer}</p>
+                </div>
               </AnimatedSection>
             ))}
           </div>
@@ -235,7 +238,7 @@ export default function Home() {
                   rel={link.external ? "noreferrer" : undefined}
                 >
                   <link.icon className="h-4 w-4" />
-                  <span>{link.label}</span>
+                  <span className={link.hideLabel ? "sr-only" : undefined}>{link.label}</span>
                   <ArrowUpRight className="ml-auto h-4 w-4 opacity-40" />
                 </a>
               ))}

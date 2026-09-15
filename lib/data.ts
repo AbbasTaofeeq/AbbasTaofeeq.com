@@ -1,6 +1,7 @@
 import {
   Bot,
   Code2,
+  FlaskConical,
   Gauge,
   Mail,
   MapPin,
@@ -42,7 +43,7 @@ export const navItems: NavItem[] = [
 export const stats = [
   { value: "3+", label: "Years building production frontend" },
   { value: "30%", label: "Manual workflow cut via AI" },
-  { value: "7", label: "Live products shipped" },
+  { value: "7+", label: "Live products shipped" },
   { value: "Remote", label: "Open to global teams" }
 ];
 
@@ -50,48 +51,47 @@ export const expertise = [
   {
     category: "Frontend Development",
     icon: Code2,
-    items: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "HTML5 / CSS3"]
+    items: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Context API / Redux", "HTML5 / CSS3"]
   },
   {
     category: "AI & Automation",
     icon: Bot,
-    items: ["Azure AI", "AI Agents", "Workflow Automation", "Prompt Engineering", "AI-Assisted Development"]
+    items: ["Azure AI", "AI Agents", "Workflow Automation", "Prompt Engineering", "Microsoft Power Platform"]
   },
   {
     category: "Tools & Platforms",
     icon: Settings2,
-    items: ["Git", "GitHub", "Vercel", "Docker", "Azure App Services"]
+    items: ["Git", "GitHub", "GitHub Actions", "Vercel", "Docker", "Azure App Services"]
   },
   {
     category: "Performance & Quality",
     icon: Gauge,
-    items: ["SEO", "WCAG", "Performance", "Code Splitting", "Responsive"]
+    items: ["SEO", "WCAG", "SSR / SSG / ISR", "Code Splitting", "Responsive"]
+  },
+  {
+    category: "Testing & Quality",
+    icon: FlaskConical,
+    items: ["Jest", "React Testing Library"]
   },
   {
     category: "Collaboration",
     icon: Users2,
-    items: ["REST APIs", "Azure DevOps", "Design Systems", "Cross-functional"]
+    items: ["REST APIs", "Azure DevOps", "Figma-to-Code", "Design Systems", "Cross-functional"]
   }
 ];
 
 export const experience = [
   {
-    title: "Business Automation Associate",
-    company: "Techspecialist (Mswitch Group)",
-    period: "Apr 2026 - Present",
-    summary: "Built AI workflows with Azure AI cutting manual processing by 30%, including AI recruitment platform automating CV and interviews."
-  },
-  {
-    title: "Frontend Developer / Technical Support",
-    company: "Mswitch Group",
-    period: "Jan 2026 - Apr 2026",
-    summary: "Maintained scalable React/Next.js apps, launched kadirsalami.com, improved reliability."
+    title: "Frontend Engineer (AI Automation Focus)",
+    company: "Mswitch Group (Techspecialist Limited)",
+    period: "Jan 2026 - Present",
+    summary: "Building AI-powered automation with Azure AI and Power Platform (30% less manual processing), the AI recruitment platform's CV scoring and interview automation, the Techspecialist corporate site, and kadirsalami.com (100 Lighthouse)."
   },
   {
     title: "Frontend Developer",
     company: "Shamzbridge Consult",
-    period: "Jan 2024 - Dec 2025",
-    summary: "Delivered responsive web apps for consulting and education, improving engagement ~25% via perf and UX work."
+    period: "Jan 2024 - Dec 2024",
+    summary: "Delivered responsive web apps for consulting, education, and housing (HMIP, NECA, Studio3) as part of a frontend team, improving engagement ~25% via performance and UX work."
   },
   {
     title: "Frontend Developer Trainee",
@@ -102,9 +102,18 @@ export const experience = [
 ];
 
 export const certifications = [
-  "Developing AI Apps and Agents on Microsoft Azure (AI-103) - Microsoft",
-  "Nigeria Certificate in Education (NCE), Computer Science / Physics (2024)",
-  "Frontend Developer - Cohort 5 (2023) - TIIDELab"
+  {
+    title: "Developing AI Apps and Agents on Microsoft Azure (AI-103)",
+    issuer: "Microsoft Certified"
+  },
+  {
+    title: "Nigeria Certificate in Education (NCE), Computer Science / Physics",
+    issuer: "Kwara State College of Education, Oro · 2024"
+  },
+  {
+    title: "Frontend Developer — Cohort 5 (2023)",
+    issuer: "TIIDELab Initiative"
+  }
 ];
 
 export const contactLinks = [
@@ -114,12 +123,12 @@ export const contactLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/abbas-taofeeq-olakunle1/", icon: LinkedInIcon, external: true },
   { label: "GitHub", href: "https://github.com/AbbasTaofeeq", icon: GitHubIcon, external: true },
   { label: "Instagram", href: "https://www.instagram.com/abbastaofeeq_123/", icon: InstagramIcon, external: true },
-  { label: "@AbbasTaofeeq", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
+  { label: "@mayortaofeq", href: "https://x.com/mayortaofeq", icon: XIcon, external: true, hideLabel: true }
 ];
 
 export const socialLinks: ContactLink[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/abbas-taofeeq-olakunle1/", icon: LinkedInIcon, external: true },
   { label: "GitHub", href: "https://github.com/AbbasTaofeeq", icon: GitHubIcon, external: true },
   { label: "Instagram", href: "https://www.instagram.com/abbastaofeeq_123/", icon: InstagramIcon, external: true },
-  { label: "X", href: "https://x.com/AbbasTaofeeq", icon: XIcon, external: true }
+  { label: "X", href: "https://x.com/mayortaofeq", icon: XIcon, external: true }
 ];

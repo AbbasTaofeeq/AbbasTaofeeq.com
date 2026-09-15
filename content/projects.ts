@@ -52,7 +52,7 @@ export const projects: Project[] = [
       result:
         "Screening went from 3 days to 3 hours. Recruiters now open a dashboard that says 'Here are your 15 best people today.' The boring work got automated, the human decision stayed human. It's a live internal enterprise tool.",
     },
-    stack: ["React.js", "Next.js", "Azure AI", "JavaScript", "Tailwind"],
+    stack: ["React.js", "Next.js", "Azure AI", "TypeScript", "Tailwind"],
   },
   {
     slug: "techspecialist-limited",

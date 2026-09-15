@@ -2,7 +2,7 @@
 
 import { Download } from "lucide-react";
 
-const CV_PATH = "/cv/Abbas-Taofeeq-CV.pdf";
+const CV_PATH = "/cv/Abbas-Taofeeq-Frontend-.pdf";
 const CV_FILENAME = "Abbas-Taofeeq-CV.pdf";
 
 type Props = { className?: string };
