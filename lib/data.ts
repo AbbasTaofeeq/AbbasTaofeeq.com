@@ -101,10 +101,19 @@ export const experience = [
   }
 ];
 
-export const certifications = [
+export type Certification = {
+  title: string;
+  issuer: string;
+  href?: string;
+  image?: string;
+};
+
+export const certifications: Certification[] = [
   {
-    title: "Developing AI Apps and Agents on Microsoft Azure (AI-103)",
-    issuer: "Microsoft Certified"
+    title: "Microsoft Certified: Azure AI Apps and Agents Developer Associate",
+    issuer: "Microsoft · Exam AI-103 · Sep 2026",
+    href: "https://learn.microsoft.com/api/credentials/share/en-us/TaofeeqAbbas-2697/1DA6A906863E181F?sharingId=B30FF6FEB0D50245",
+    image: "/images/certificates/azure-ai-apps-agents-associate.jpeg"
   },
   {
     title: "Nigeria Certificate in Education (NCE), Computer Science / Physics",

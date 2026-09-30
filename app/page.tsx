@@ -1,9 +1,9 @@
 import {
   ArrowUpRight,
-  Award,
   Mail,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
+import { CertificationCard } from "@/components/certification-card";
 import { ContactForm } from "@/components/contact-form";
 import { DownloadCvButton } from "@/components/download-cv-button";
 import { HeroHeadline } from "@/components/hero-headline";
@@ -206,13 +206,9 @@ export default function Home() {
               <AnimatedSection
                 delay={index * 0.05}
                 key={cert.title}
-                className="flex items-start gap-3 rounded-[var(--radius-tab)] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-tab)]"
+                className="relative hover:z-20 focus-within:z-20"
               >
-                <Award className="mt-0.5 h-5 w-5 shrink-0 text-[var(--accent)]" />
-                <div>
-                  <p className="font-display text-[15px] font-semibold leading-snug text-[var(--foreground)]">{cert.title}</p>
-                  <p className="mt-1 text-[12.5px] text-[var(--muted-2)]">{cert.issuer}</p>
-                </div>
+                <CertificationCard cert={cert} />
               </AnimatedSection>
             ))}
           </div>
